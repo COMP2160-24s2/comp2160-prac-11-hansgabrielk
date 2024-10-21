@@ -58,10 +58,12 @@ public class CameraZoom : MonoBehaviour
 
         if (cam.orthographic)
         {
+            // set the orthographic camera size proportional the zoomAmount
             cam.orthographicSize = minOrthoZoom + (zoomAmount/100f * (maxOrthoZoom - minOrthoZoom));
         }
         else
         {
+            // set the perspective camera size proportional the zoomAmount
             cam.fieldOfView = minPerspectiveZoom + (zoomAmount/100f * (maxPerspectiveZoom - minPerspectiveZoom));
         }
 
