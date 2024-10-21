@@ -89,14 +89,14 @@ public class UIManager : MonoBehaviour
 
         Ray ray = cam.ScreenPointToRay(mousePosVec3);
 
-        Debug.Log(ray);
+        //Debug.Log(ray);
 
         LayerMask groundMask = LayerMask.GetMask("Walls");
 
         RaycastHit hit;
         if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundMask))
         {
-            crosshair.position = hit.point;
+            crosshair.position = hit.point + (Vector3.up * 0.1f);
         }
     }
 
