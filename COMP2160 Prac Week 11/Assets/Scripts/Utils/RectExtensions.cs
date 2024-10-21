@@ -53,7 +53,7 @@ public static class RectExtensions  {
 
 	public static Vector3 Clamp(this Rect r, Vector3 v) {
 		v.x = Mathf.Clamp(v.x, r.xMin, r.xMax);
-		v.y = Mathf.Clamp(v.y, r.yMin, r.yMax);
+		v.z = Mathf.Clamp(v.z, r.yMin, r.yMax);
 		return v;
 	}
 

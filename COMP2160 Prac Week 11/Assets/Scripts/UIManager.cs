@@ -10,6 +10,7 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WordsOnPlay.Utils;
 
 // note this has to run earlier than other classes which subscribe to the TargetSelected event
 [DefaultExecutionOrder(-100)]
@@ -20,7 +21,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform target;
 #endregion 
 
-#region Singleton
+    [SerializeField] private bool useMouseDelta;
+    [SerializeField] private float mouseSpeed = 1;
+    [SerializeField] private RectTransform bounds;
+
+    #region Singleton
     static private UIManager instance;
     static public UIManager Instance
     {
@@ -79,24 +84,37 @@ public class UIManager : MonoBehaviour
 
     private void MoveCrosshair() 
     {
-        Vector2 mousePosVec2 = mouseAction.ReadValue<Vector2>();
-        //Debug.Log(mousePosVec2);
-
-        // FIXME: Move the crosshair position to the mouse position (in world coordinates)
-        Camera cam = Camera.main;
-
-        Vector3 mousePosVec3 = new Vector3(mousePosVec2.x, mousePosVec2.y, 0);
-
-        Ray ray = cam.ScreenPointToRay(mousePosVec3);
-
-        //Debug.Log(ray);
-
-        LayerMask groundMask = LayerMask.GetMask("Walls");
-
-        RaycastHit hit;
-        if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundMask))
+        if (!useMouseDelta)
         {
-            crosshair.position = hit.point + (Vector3.up * 0.1f);
+            Vector2 mousePosVec2 = mouseAction.ReadValue<Vector2>();
+            //Debug.Log(mousePosVec2);
+
+            // FIXME: Move the crosshair position to the mouse position (in world coordinates)
+            Camera cam = Camera.main;
+
+            Vector3 mousePosVec3 = new Vector3(mousePosVec2.x, mousePosVec2.y, 0);
+
+            Ray ray = cam.ScreenPointToRay(mousePosVec3);
+
+            LayerMask groundMask = LayerMask.GetMask("Walls");
+
+            RaycastHit hit;
+            if (Physics.Raycast(ray.origin, ray.direction, out hit, Mathf.Infinity, groundMask))
+            {
+                crosshair.position = hit.point + (Vector3.up * 0.1f);
+            }
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+
+            Vector2 mouseDeltaVec2 = deltaAction.ReadValue<Vector2>();
+
+            Vector3 mouseDeltaVec3 = new Vector3(mouseDeltaVec2.x, 0f, mouseDeltaVec2.y);
+
+            crosshair.position += mouseDeltaVec3 / 100f * mouseSpeed;
+
+            crosshair.position = bounds.rect.Clamp(crosshair.position);
         }
     }
 
@@ -113,4 +131,8 @@ public class UIManager : MonoBehaviour
 
 #endregion Update
 
+    void OnDrawGizmos()
+    {
+        //bounds.DrawGizmo();
+    }
 }

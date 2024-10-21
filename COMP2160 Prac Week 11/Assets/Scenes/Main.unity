@@ -160,6 +160,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -4.09
       objectReference: {fileID: 0}
+    - target: {fileID: 5450362575394769019, guid: b96044efa2ae54750ad24e39e1352865,
+        type: 3}
+      propertyPath: bounds
+      value: 
+      objectReference: {fileID: 331285}
+    - target: {fileID: 5450362575394769019, guid: b96044efa2ae54750ad24e39e1352865,
+        type: 3}
+      propertyPath: mouseSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5450362575394769019, guid: b96044efa2ae54750ad24e39e1352865,
+        type: 3}
+      propertyPath: useMouseDelta
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7485987256551808895, guid: b96044efa2ae54750ad24e39e1352865,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -230,6 +245,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96044efa2ae54750ad24e39e1352865, type: 3}
+--- !u!224 &331284 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7485987256551808895, guid: b96044efa2ae54750ad24e39e1352865,
+    type: 3}
+  m_PrefabInstance: {fileID: 331283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &331285 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1223692753452303015, guid: b96044efa2ae54750ad24e39e1352865,
+    type: 3}
+  m_PrefabInstance: {fileID: 331283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &331286 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2155366059082070411, guid: b96044efa2ae54750ad24e39e1352865,
+    type: 3}
+  m_PrefabInstance: {fileID: 331283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +617,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac1251113a59cd42b2c05a5c655f765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 432978814}
+  target1: {fileID: 432978814}
+  target2: {fileID: 331286}
+  target3: {fileID: 331284}
 --- !u!20 &2408856355099670849
 Camera:
   m_ObjectHideFlags: 0

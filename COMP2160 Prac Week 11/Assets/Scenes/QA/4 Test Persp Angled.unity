@@ -149,7 +149,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bounds
       value: 
-      objectReference: {fileID: 1582108607}
+      objectReference: {fileID: 1971409721}
     - target: {fileID: 5450362575394769019, guid: b96044efa2ae54750ad24e39e1352865,
         type: 3}
       propertyPath: mouseSpeed
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Test Orthographic Camera Flat: \nMove the cross hair to different parts
+  m_text: "Test Perspective Camera Angled: \nMove the cross hair to different parts
     of the screen and click.\n1. Check crosshair is always visible\n2. Check crosshair
     moves with mouse cursor.\n3. Check crosshair is displayed under the marble. \n4.
     Check visible target marker is dropped when mouse is clicked."
@@ -507,18 +507,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!4 &430685046 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7840369716606208530, guid: 1a592d885d76b4a89afcc829b8d5f560,
-    type: 3}
-  m_PrefabInstance: {fileID: 923977100}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &649861030 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2155366059082070411, guid: b96044efa2ae54750ad24e39e1352865,
-    type: 3}
-  m_PrefabInstance: {fileID: 331283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,54 +556,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &913345243
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 913345245}
-  - component: {fileID: 913345246}
-  m_Layer: 0
-  m_Name: CameraPivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &913345245
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913345243}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7675371378090306038}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &913345246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913345243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dac1251113a59cd42b2c05a5c655f765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target1: {fileID: 430685046}
-  target2: {fileID: 649861030}
-  target3: {fileID: 930948909}
 --- !u!1001 &923977100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,12 +624,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a592d885d76b4a89afcc829b8d5f560, type: 3}
---- !u!224 &930948909 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7485987256551808895, guid: b96044efa2ae54750ad24e39e1352865,
-    type: 3}
-  m_PrefabInstance: {fileID: 331283}
+--- !u!1 &1082307027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1082307029}
+  - component: {fileID: 1082307028}
+  m_Layer: 0
+  m_Name: CameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1082307028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082307027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac1251113a59cd42b2c05a5c655f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target1: {fileID: 1547846252}
+  target2: {fileID: 1232192024}
+  target3: {fileID: 1374573100}
+--- !u!4 &1082307029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082307027}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7675371378090306038}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!1001 &1183061768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -758,7 +740,25 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 184f488bf1486423baadff9ee0a0bade, type: 3}
---- !u!224 &1582108607 stripped
+--- !u!224 &1232192024 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2155366059082070411, guid: b96044efa2ae54750ad24e39e1352865,
+    type: 3}
+  m_PrefabInstance: {fileID: 331283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1374573100 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7485987256551808895, guid: b96044efa2ae54750ad24e39e1352865,
+    type: 3}
+  m_PrefabInstance: {fileID: 331283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1547846252 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7840369716606208530, guid: 1a592d885d76b4a89afcc829b8d5f560,
+    type: 3}
+  m_PrefabInstance: {fileID: 923977100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1971409721 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1223692753452303015, guid: b96044efa2ae54750ad24e39e1352865,
     type: 3}
@@ -798,7 +798,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -900,7 +900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 913345245}
+  m_Father: {fileID: 1082307029}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &7675371378090306039
 MonoBehaviour:
@@ -929,4 +929,4 @@ SceneRoots:
   - {fileID: 923977100}
   - {fileID: 331283}
   - {fileID: 345881380}
-  - {fileID: 913345245}
+  - {fileID: 1082307029}

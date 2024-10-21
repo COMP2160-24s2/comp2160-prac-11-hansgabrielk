@@ -5,11 +5,11 @@ using UnityEngine.InputSystem;
 
 public class CameraZoom : MonoBehaviour
 {
-    [SerializeField] private float zoomChangeAmount;
-    [SerializeField] private float minPerspectiveZoom;
-    [SerializeField] private float maxPerspectiveZoom;
-    [SerializeField] private float minOrthoZoom;
-    [SerializeField] private float maxOrthoZoom;
+    [SerializeField] private float zoomChangeAmount = 5f;
+    [SerializeField] private float minPerspectiveZoom = 30f;
+    [SerializeField] private float maxPerspectiveZoom = 100f;
+    [SerializeField] private float minOrthoZoom = 3f;
+    [SerializeField] private float maxOrthoZoom = 10f;
 
     private Camera cam;
     private Actions actions;
