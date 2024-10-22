@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 5450362575394769019, guid: b96044efa2ae54750ad24e39e1352865,
         type: 3}
       propertyPath: useMouseDelta
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7485987256551808895, guid: b96044efa2ae54750ad24e39e1352865,
         type: 3}

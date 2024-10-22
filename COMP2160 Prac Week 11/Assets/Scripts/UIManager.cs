@@ -86,6 +86,11 @@ public class UIManager : MonoBehaviour
     {
         if (!useMouseDelta)
         {
+            if (Cursor.lockState != CursorLockMode.Confined)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+
             Vector2 mousePosVec2 = mouseAction.ReadValue<Vector2>();
             //Debug.Log(mousePosVec2);
 
@@ -104,9 +109,13 @@ public class UIManager : MonoBehaviour
                 crosshair.position = hit.point + (Vector3.up * 0.1f);
             }
         }
+        // use mouse delta
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            if (Cursor.lockState != CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
 
             Vector2 mouseDeltaVec2 = deltaAction.ReadValue<Vector2>();
 
